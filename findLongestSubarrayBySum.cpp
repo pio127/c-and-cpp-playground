@@ -62,7 +62,7 @@ int main(int argc, char* argv[]) {
                              114, 192, 105, 19,  33,  151, 6,   176, 140, 104,
                              23,  99,  48,  185, 49,  172, 65});
   printVector(output2);
-  
+
   std::vector<int> output3 = findLongestSubarrayBySum(3, std::vector<int>{3});
   printVector(output3);
 }

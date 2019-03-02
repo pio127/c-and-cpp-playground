@@ -1,25 +1,21 @@
-#include<iostream>
-#include<vector>
-#include<functional>
+#include <functional>
+#include <iostream>
+#include <vector>
 
-int climbingStairs(int n){
-    std::vector<int> mem{0, 1, 2};
+int climbingStairs(int n) {
+  std::vector<int> mem{0, 1, 2};
 
-    std::function<int (int)> stairs = [&](int n){
-        if(mem.size()>static_cast<size_t>(n) || n<=2){
-            return mem.at(n);
-        }
-        else{
-            mem.emplace_back(stairs(n-1)+ stairs(n-2));
-            return mem.back();
-        }
-        return n;
-    };
+  std::function<int(int)> stairs = [&](int n) {
+    if (mem.size() > static_cast<size_t>(n) || n <= 2) {
+      return mem.at(n);
+    } else {
+      mem.emplace_back(stairs(n - 1) + stairs(n - 2));
+      return mem.back();
+    }
+    return n;
+  };
 
-    return stairs(n);
+  return stairs(n);
 }
 
-int main()
-{
-    std::cout<<climbingStairs(10)<<'\n';
-}
+int main() { std::cout << climbingStairs(10) << '\n'; }
