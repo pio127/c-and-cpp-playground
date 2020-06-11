@@ -1,1 +1,2 @@
-C++ examples for quick reference.
+# C and C++ features playground
+A Place to test different language features.
