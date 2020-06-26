@@ -10,6 +10,7 @@ void print_2d_matrix(void** matrix, unsigned short rows, unsigned short columns)
         printf("\n");
     }
 }
+
 int main() {
     int matrix_cols=4;
     int matrix_rows=3;
@@ -22,11 +23,16 @@ int main() {
         {1, 2, 3, 4}
     };
 
-    int **matrix_heap = malloc(sizeof(int)*matrix_rows);
+    int **matrix_heap = malloc(sizeof(int*)*matrix_rows);
     matrix_heap[0] = malloc(sizeof(int)*matrix_cols);
     matrix_heap[1] = malloc(sizeof(int)*matrix_cols);
     matrix_heap[2] = malloc(sizeof(int)*matrix_cols);
 
 
     print_2d_matrix(matrix_heap, 3, 4);
+
+    free(matrix_heap[0]);
+    free(matrix_heap[1]);
+    free(matrix_heap[2]);
+    free(matrix_heap);
 }
